@@ -190,9 +190,32 @@
 			}
 			return interval + ' ' + intervalType + ' ' + 'ago';
 		};
+		(function() {
+		  var isReady = setInterval(function() {
+		    if (document && (document.readyState === 'complete' || document.readyState === 'interactive')) {
+		      clearInterval(isReady);
+		      popNext();
+		    }
+		  }, 10);
+		})();
 	    </script>
 	</head>
-	<body onload="popNext()">
+	<body style="height: 2000px;">
+	 	<div class="imomin">
+		    <div class="action">
+		    	<div class="icon">
+		    		<i>
+		    			<img id="map" src="" onerror="this.style.opacity='0'"></img>
+		    		</i>
+		    	</div>
+		    	<div class="info">
+		    		<div id="title" class="title"></div>
+		    		<div id="description" class="description"></div>
+		    		<div id="date" class="ago"></div>
+		    	</div>
+		    </div>
+	 	</div>
+	</body>
 	 	<div class="imomin">
 		    <div class="action">
 		    	<div class="icon">
