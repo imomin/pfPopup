@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<!-- <script type="text/javascript" src="http://localhost:3000/api/showproof/123"></script> -->
+		<script type="text/javascript">
+			(function(){
+				var script = document.createElement("script");
+					script.type="text/javascript",
+					script.async=true,
+					script.src='http://localhost:3000/api/plugin', //https://cdn.firstpromoter.com/fprom.js 
+					script.onload=script.onreadystatechange=function(){
+							var status=this.readyState;
+							if(!status||"complete"==status||"loaded"==status)
+								try{
+									window.$howProof = new __plugin_;
+									$howProof.init("yjepcfkx")
+								}
+								catch(err){
+
+								}
+							};
+							var e=document.getElementsByTagName("script")[0];
+								e.parentNode.insertBefore(script,e);
+					})();
+		</script>
+	</head>
+	<body style="height: 2000px;"></body>
+</html>
