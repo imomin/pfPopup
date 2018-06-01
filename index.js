@@ -25,8 +25,8 @@ app.use(express.static(__dirname + "/"));
 
 
 app.get('/', function (req, res) {
-	// express.static(__dirname + 'notification.html');
-	var index = fs.readFileSync('notification.html');
+	// express.static(__dirname + 'index.html');
+	var index = fs.readFileSync('index.html');
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.end(index);
 });
